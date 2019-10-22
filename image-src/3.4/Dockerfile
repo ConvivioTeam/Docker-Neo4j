@@ -4,15 +4,15 @@ ENV NEO4J_AUTH=neo4j/letmein
 
 ENV APOC_VERSION 3.4.0.7
 ENV APOC_URI https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/${APOC_VERSION}/apoc-${APOC_VERSION}-all.jar
-RUN wget -P /var/lib/neo4j/plugins ${APOC_URI}
+ADD ${APOC_URI} /var/lib/neo4j/plugins
 
 ENV GRAPHQL_VERSION 3.4.0.3
 ENV GRAPHQL_URI https://github.com/neo4j-graphql/neo4j-graphql/releases/download/${GRAPHQL_VERSION}/neo4j-graphql-${GRAPHQL_VERSION}.jar
-RUN wget -P /var/lib/neo4j/plugins ${GRAPHQL_URI}
+ADD ${GRAPHQL_URI} /var/lib/neo4j/plugins
 
 ENV GRAPH_ALGORITHMS_VERSION 3.4.12.7
 ENV GRAPH_ALGORITHMS_URI https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/${GRAPHQL_VERSION}/graph-algorithms-algo-${GRAPHQL_VERSION}.jar
-RUN wget -P /var/lib/neo4j/plugins ${GRAPH_ALGORITHMS_URI}
+ADD ${GRAPH_ALGORITHMS_URI} /var/lib/neo4j/plugins
 
 EXPOSE 7474 7473 7687
 
