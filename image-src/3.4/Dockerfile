@@ -11,7 +11,7 @@ ENV GRAPHQL_URI https://github.com/neo4j-graphql/neo4j-graphql/releases/download
 ADD ${GRAPHQL_URI} /var/lib/neo4j/plugins
 
 ENV GRAPH_ALGORITHMS_VERSION 3.4.12.7
-ENV GRAPH_ALGORITHMS_URI https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/${GRAPHQL_VERSION}/graph-algorithms-algo-${GRAPHQL_VERSION}.jar
+ENV GRAPH_ALGORITHMS_URI https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/${GRAPH_ALGORITHMS_VERSION}/graph-algorithms-algo-${GRAPH_ALGORITHMS_VERSION}.jar
 ADD ${GRAPH_ALGORITHMS_URI} /var/lib/neo4j/plugins
 
 EXPOSE 7474 7473 7687
