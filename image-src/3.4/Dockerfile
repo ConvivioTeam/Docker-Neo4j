@@ -1,6 +1,7 @@
 FROM neo4j:3.4.15
 
 ENV NEO4J_AUTH=neo4j/letmein
+ENV PLUGINS_DIR=/var/lib/neo4j/plugins
 
 ENV APOC_VERSION 3.4.0.7
 ENV APOC_URI https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/${APOC_VERSION}/apoc-${APOC_VERSION}-all.jar
