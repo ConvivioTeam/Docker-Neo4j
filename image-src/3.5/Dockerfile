@@ -3,7 +3,7 @@ FROM neo4j:3.5.15
 ENV NEO4J_AUTH=neo4j/letmein
 ENV PLUGINS_DIR=/var/lib/neo4j/plugins
 
-ENV APOC_VERSION 3.5.0.5
+ENV APOC_VERSION 3.5.0.9
 ENV APOC_URI https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/${APOC_VERSION}/apoc-${APOC_VERSION}-all.jar
 RUN curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${PLUGINS_DIR}/apoc.jar ${APOC_URI}
 
