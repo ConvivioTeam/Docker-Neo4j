@@ -16,7 +16,7 @@ ENV GRAPH_ALGORITHMS_URI https://github.com/neo4j-contrib/neo4j-graph-algorithms
 RUN  curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${PLUGINS_DIR}/graph-algorithms.jar ${GRAPH_ALGORITHMS_URI}
 
 ENV NEOSEMANTICS_VERSION 3.4.0.2
-ENV NEOSEMANTICS_URI https://github.com/neo4j-labs/neosemantics/releases/download/{NEOSEMANTICS_VERSION}/neosemantics-{NEOSEMANTICS_VERSION}.jar
+ENV NEOSEMANTICS_URI https://github.com/neo4j-labs/neosemantics/releases/download/${NEOSEMANTICS_VERSION}/neosemantics-${NEOSEMANTICS_VERSION}.jar
 RUN  curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${PLUGINS_DIR}/neosemantics.jar ${NEOSEMANTICS_URI}
 
 EXPOSE 7474 7473 7687
