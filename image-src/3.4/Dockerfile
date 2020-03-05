@@ -1,4 +1,4 @@
-FROM neo4j:3.4.15
+FROM neo4j:3.4.17
 
 ENV NEO4J_AUTH=neo4j/letmein
 ENV PLUGINS_DIR=/var/lib/neo4j/plugins
@@ -14,6 +14,10 @@ RUN  curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${P
 ENV GRAPH_ALGORITHMS_VERSION 3.4.12.7
 ENV GRAPH_ALGORITHMS_URI https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/${GRAPH_ALGORITHMS_VERSION}/graph-algorithms-algo-${GRAPH_ALGORITHMS_VERSION}.jar
 RUN  curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${PLUGINS_DIR}/graph-algorithms.jar ${GRAPH_ALGORITHMS_URI}
+
+ENV NEOSEMANTICS_VERSION 3.4.0.2
+ENV NEOSEMANTICS_URI https://github.com/neo4j-labs/neosemantics/releases/download/{NEOSEMANTICS_VERSION}/neosemantics-{NEOSEMANTICS_VERSION}.jar
+RUN  curl --silent --show-error --fail --retry 30 --retry-max-time 300 -L -o ${PLUGINS_DIR}/neosemantics.jar ${NEOSEMANTICS_URI}
 
 EXPOSE 7474 7473 7687
 
